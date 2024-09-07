@@ -1,0 +1,16 @@
+{
+  "name": "minal_in",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production PORT=3050 pm2 start server.js -i 0 --name minal_in",
+    "dev": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "epress": "^0.0.1-security"
+  }
+}
