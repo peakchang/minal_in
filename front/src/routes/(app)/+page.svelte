@@ -15,7 +15,7 @@
     }
 
     let imgArr = [
-        "img0.jpg",
+        // "img0.jpg",
         "img1.jpg",
         "img2.jpg",
         "img3.jpg",
