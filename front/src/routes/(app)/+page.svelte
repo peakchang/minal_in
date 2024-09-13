@@ -71,7 +71,7 @@
             },
         });
 
-        loading = false;
+        
 
         const imgs = document.querySelectorAll("img");
         console.log(imgs);
@@ -85,6 +85,8 @@
                 adjustHeight(index, imgHeight);
             };
         });
+
+        loading = false;
     });
 
     function adjustHeight(index, imgHeight) {
