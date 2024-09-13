@@ -86,7 +86,7 @@
             };
         });
 
-        loading = false;
+        
     });
 
     function adjustHeight(index, imgHeight) {
@@ -98,7 +98,6 @@
     }
 </script>
 
-{#if !loading}
     <div class="main-swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
@@ -144,7 +143,7 @@
             </div>
         </div>
     </div>
-{/if}
+
 
 <style>
     .main-swiper {
