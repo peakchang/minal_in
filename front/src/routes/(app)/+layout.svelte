@@ -5,8 +5,6 @@
 
     $: yAxis, senseYAxis();
     function senseYAxis() {
-        console.log(yAxis);
-
         if (yAxis > 70) {
             gnbWhiteBool = true;
         } else {
