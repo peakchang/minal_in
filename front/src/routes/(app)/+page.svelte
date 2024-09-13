@@ -86,36 +86,31 @@
     }
 </script>
 
-<div class="fixed top-0 left-0 w-full z-50"></div>
-<div class="">
-    <div class="main-swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            {#each imgArr as img, idx}
-                <div
-                    class="swiper-slide img_wrapper"
-                    style="height: {wrapperHeights[idx] || 'auto'}"
-                >
-                    <img src="/swiper_img/{img}" alt="" />
-                </div>
-            {/each}
-        </div>
+<div class="main-swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        {#each imgArr as img, idx}
+            <div
+                class="swiper-slide img_wrapper"
+                style="height: {wrapperHeights[idx] || 'auto'}"
+            >
+                <img src="/swiper_img/{img}" alt="" />
+            </div>
+        {/each}
     </div>
 </div>
 
 <div class="max-w-[1200px] mx-auto">
-    <div class="py-10 my-3 border text-center">
-        설명이 들어갈수 있는 부분!!
-    </div>
+    <div class="py-10 my-3 border text-center">설명이 들어갈수 있는 부분!!</div>
 </div>
 
 <div class="container mx-auto">
     <div class="w-4/5 md:w-2/5 mx-auto pt-3 px-3 bg-black">
-        <div style="" class="swiper mySwiper2 " >
+        <div style="" class="swiper mySwiper2">
             <div class="swiper-wrapper flex items-center">
                 {#each detailImgArr as detailImg}
-                    <div class="swiper-slide ">
+                    <div class="swiper-slide">
                         <img src="/swiper_detail_img/img{detailImg}.jpg" />
                     </div>
                 {/each}
