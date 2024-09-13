@@ -15,7 +15,7 @@
     }
 
     let imgArr = [
-        // "img0.jpg",
+        "img0.jpg",
         "img1.jpg",
         "img2.jpg",
         "img3.jpg",
@@ -71,84 +71,78 @@
             },
         });
 
-        
+        // const imgs = document.querySelectorAll("img");
+        // console.log(imgs);
 
-        const imgs = document.querySelectorAll("img");
-        console.log(imgs);
+        // imgs.forEach((img, index) => {
+        //     img.onload = () => {
+        //         const imgHeight = img.clientHeight;
+        //         console.log(imgHeight);
 
-        imgs.forEach((img, index) => {
-            img.onload = () => {
-                const imgHeight = img.clientHeight;
-                console.log(imgHeight);
-
-                imgHeights[index] = imgHeight;
-                adjustHeight(index, imgHeight);
-            };
-        });
-
-        
+        //         imgHeights[index] = imgHeight;
+        //         adjustHeight(index, imgHeight);
+        //     };
+        // });
     });
 
-    function adjustHeight(index, imgHeight) {
-        if (browser) {
-            windowHeight = window.innerHeight;
-            wrapperHeights[index] =
-                imgHeight > windowHeight ? "100vh" : `${imgHeight}px`;
-        }
-    }
+    // function adjustHeight(index, imgHeight) {
+    //     if (browser) {
+    //         windowHeight = window.innerHeight;
+    //         wrapperHeights[index] =
+    //             imgHeight > windowHeight ? "100vh" : `${imgHeight}px`;
+    //     }
+    // }
 </script>
 
-    <div class="main-swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            {#each imgArr as img, idx}
-                <div
-                    class="swiper-slide img_wrapper"
-                    style="height: {wrapperHeights[idx] || 'auto'}"
-                >
-                    <img src="/swiper_img/{img}" alt="" />
-                </div>
-            {/each}
-        </div>
-    </div>
-
-    <div class="max-w-[1200px] mx-auto">
-        <div class="py-10 my-3 border text-center">
-            설명이 들어갈수 있는 부분!!
-        </div>
-    </div>
-
-    <div class="container mx-auto">
-        <div class="w-4/5 md:w-2/5 mx-auto pt-3 px-3 bg-black">
-            <div style="" class="swiper mySwiper2">
-                <div class="swiper-wrapper flex items-center">
-                    {#each detailImgArr as detailImg}
-                        <div class="swiper-slide">
-                            <img src="/swiper_detail_img/img{detailImg}.jpg" />
-                        </div>
-                    {/each}
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+<div class="main-swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        {#each imgArr as img, idx}
+            <div
+                class="swiper-slide img_wrapper"
+                style="height: {wrapperHeights[idx] || 'auto'}"
+            >
+                <img src="/swiper_img/{img}" alt="" />
             </div>
-            <div thumbsSlider="" class="swiper mySwiper bg-black">
-                <div class="swiper-wrapper">
-                    {#each detailImgArr as detailImg}
-                        <div class="swiper-slide">
-                            <img src="/swiper_detail_img/img{detailImg}.jpg" />
-                        </div>
-                    {/each}
-                </div>
+        {/each}
+    </div>
+</div>
+
+<div class="max-w-[1200px] mx-auto">
+    <div class="py-10 my-3 border text-center">설명이 들어갈수 있는 부분!!</div>
+</div>
+
+<div class="container mx-auto">
+    <div class="w-4/5 md:w-2/5 mx-auto pt-3 px-3 bg-black">
+        <div style="" class="swiper mySwiper2">
+            <div class="swiper-wrapper flex items-center">
+                {#each detailImgArr as detailImg}
+                    <div class="swiper-slide">
+                        <img src="/swiper_detail_img/img{detailImg}.jpg" />
+                    </div>
+                {/each}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper bg-black">
+            <div class="swiper-wrapper">
+                {#each detailImgArr as detailImg}
+                    <div class="swiper-slide">
+                        <img src="/swiper_detail_img/img{detailImg}.jpg" />
+                    </div>
+                {/each}
             </div>
         </div>
     </div>
-
+</div>
 
 <style>
     .main-swiper {
         height: 100vh;
         overflow: hidden;
+        border: 1px solid red;
     }
     .swiper-slide img {
         width: 100%;
