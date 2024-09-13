@@ -42,7 +42,7 @@
             effect: "fade",
             spaceBetween: 30,
             autoplay: {
-                delay: 3000,
+                delay: 1500,
             },
         });
 
