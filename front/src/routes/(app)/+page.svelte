@@ -1,17 +1,26 @@
 <script>
     import { browser } from "$app/environment";
     import { onMount } from "svelte";
+    let mainSwiper;
+    let swiperContain;
+    let swiper2;
     let swiper;
+
     let imgArr = [
-        "img1.jpeg",
-        "img2.jpeg",
-        "img3.jpeg",
+        "img0.jpg",
+        "img1.jpg",
+        "img2.jpg",
+        "img3.jpg",
         "img4.jpeg",
         "img5.jpeg",
         "img6.jpeg",
         "img7.jpeg",
         "img8.jpeg",
+        "img9.jpeg",
+        "img10.jpeg",
     ];
+
+    let detailImgArr = Array.from({ length: 30 }, (_, i) => i);
 
     let imgHeights = [];
     // let windowHeight = window.innerHeight;
@@ -19,13 +28,38 @@
     let wrapperHeights = [];
 
     onMount(() => {
-        // init Swiper:
-        swiper = new Swiper(".main-swiper", {
+        // main init Swiper:
+        mainSwiper = new Swiper(".main-swiper", {
             loop: true,
             effect: "fade",
             spaceBetween: 30,
             autoplay: {
                 delay: 3000,
+            },
+        });
+
+        swiper = new Swiper(".mySwiper", {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+            // autoplay: {
+            //     delay: 3000,
+            // },
+        });
+        swiper2 = new Swiper(".mySwiper2", {
+            loop: true,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+            },
+            thumbs: {
+                swiper: swiper,
             },
         });
 
@@ -36,7 +70,7 @@
             img.onload = () => {
                 const imgHeight = img.clientHeight;
                 console.log(imgHeight);
-                
+
                 imgHeights[index] = imgHeight;
                 adjustHeight(index, imgHeight);
             };
@@ -68,19 +102,81 @@
             {/each}
         </div>
     </div>
+</div>
 
-    asdfasdfasdf
-    <div class="bg-red-500">aslfjaisjdfliajsdf</div>
+<div class="max-w-[1200px] mx-auto">
+    <div class="py-10 my-3 border text-center">
+        설명이 들어갈수 있는 부분!!
+    </div>
+</div>
+
+<div class="container mx-auto">
+    <div class="w-4/5 md:w-2/5 mx-auto pt-3 px-3 bg-black">
+        <div style="" class="swiper mySwiper2 " >
+            <div class="swiper-wrapper flex items-center">
+                {#each detailImgArr as detailImg}
+                    <div class="swiper-slide ">
+                        <img src="/swiper_detail_img/img{detailImg}.jpg" />
+                    </div>
+                {/each}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper bg-black">
+            <div class="swiper-wrapper">
+                {#each detailImgArr as detailImg}
+                    <div class="swiper-slide">
+                        <img src="/swiper_detail_img/img{detailImg}.jpg" />
+                    </div>
+                {/each}
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
     .main-swiper {
         height: 100vh;
-        border: 1px solid red;
         overflow: hidden;
     }
     .swiper-slide img {
         width: 100%;
         height: auto;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .mySwiper2 {
+        height: 10%;
+        width: 100%;
+    }
+
+    .mySwiper {
+        height: 150px;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+
+    .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 </style>

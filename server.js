@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 import { handler } from "./front/build/handler.js"
 
-import { admBackLinkRouter } from './routes/adm_backlink.js'
+// import { admBackLinkRouter } from './routes/adm_backlink.js'
 
 
 
@@ -45,7 +45,7 @@ app.use(cors(corsOptions));
 
 app.enable('trust proxy');
 
-app.use('/api/v5/adm_backlink', admBackLinkRouter);
+// app.use('/api/v5/adm_backlink', admBackLinkRouter);
 
 
 
