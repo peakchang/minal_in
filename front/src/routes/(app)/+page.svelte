@@ -142,7 +142,6 @@
     .main-swiper {
         height: 100vh;
         overflow: hidden;
-        border: 1px solid red;
     }
 
     @media (max-width: 800px) {
