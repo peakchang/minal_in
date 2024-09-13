@@ -144,6 +144,12 @@
         overflow: hidden;
         border: 1px solid red;
     }
+
+    @media (max-width: 800px) {
+        .main-swiper {
+            height: 80vh;
+        }
+    }
     .swiper-slide img {
         width: 100%;
         height: auto;
