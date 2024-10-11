@@ -15,8 +15,8 @@
     const menuList = [
         { name: "오시는길", link: "location" },
         { name: "예약현황", link: "schedule" },
-        { name: "예약하기", link: "reservation" },
-        { name: "문의하기", link: "contact" },
+        // { name: "예약하기", link: "reservation" },
+        { name: "예약 / 문의", link: "contact" },
     ];
 </script>
 
@@ -54,7 +54,7 @@
     <div class="pt-1 pb-2">
         <ul class="flex justify-around text-sm">
             {#each menuList as menu}
-                <li><a href={menu.link}>{menu.name}</a></li>
+                <li><a href="/{menu.link}">{menu.name}</a></li>
             {/each}
         </ul>
     </div>
