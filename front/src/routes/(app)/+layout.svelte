@@ -1,4 +1,7 @@
 <script>
+    import { onMount, tick } from "svelte";
+    import { browser } from "$app/environment";
+
     let yAxis;
     let inner_width;
     let gnbWhiteBool = false;
@@ -18,9 +21,24 @@
         // { name: "예약하기", link: "reservation" },
         { name: "예약 / 문의", link: "contact" },
     ];
+
+    onMount(async () => {
+        if (browser) {
+            kakao = window.kakao;
+        }
+    });
 </script>
 
 <svelte:window bind:scrollY={yAxis} bind:innerWidth={inner_width} />
+
+<div class="fixed right-6 z-[99999]" style="bottom: 13%;">
+    <a href="">
+        <div class="w-16 bg-yellow-400 p-3 rounded-full mb-1">
+            <img src="/kakao_icon.png" alt="" />
+        </div>
+        <div class="bg-gray-200 text-xs text-center rounded-full py-0.5">카톡문의</div>
+    </a>
+</div>
 
 <div
     class="hidden md:block fixed left-0 top-0 z-[9999] w-full gnb-wrapper px-8 py-3"
@@ -35,7 +53,7 @@
         <div>
             <ul class="flex items-center gap-8 font-semibold text-lg">
                 {#each menuList as menu}
-                    <li><a href={menu.link}>{menu.name}</a></li>
+                    <li><a href="/{menu.link}">{menu.name}</a></li>
                 {/each}
             </ul>
         </div>

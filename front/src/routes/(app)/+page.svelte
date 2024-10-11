@@ -114,7 +114,7 @@
 </div>
 
 <div class="container mx-auto">
-    <div class="w-full md:w-2/5 mx-auto pt-3 px-3 bg-black">
+    <div class="w-full md:w-3/5 mx-auto pt-3 px-3 bg-black">
         <div style="" class="swiper mySwiper2">
             <div class="swiper-wrapper flex items-center">
                 {#each detailImgArr as detailImg}

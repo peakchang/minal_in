@@ -37,7 +37,15 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0-dev.3/quill.snow.min.css"
         rel="stylesheet"
     />
+
+    <script
+        type="text/javascript"
+        defer
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=36aa75a1c58848caeb4edc00f6e9535d&libraries=services&autoload=false`}
+    ></script>
 </svelte:head>
+
+
 
 <slot></slot>
 

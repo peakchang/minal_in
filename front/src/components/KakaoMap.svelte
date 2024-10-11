@@ -14,14 +14,14 @@
 
     onMount(async () => {
         if (browser) {
+            console.log(window.kakao);
+            
             kakao = window.kakao;
+            console.log(kakao);
         }
 
         console.log(getAddress);
         console.log(phText);
-        
-        
-        await tick();
         createMap();
     });
 
