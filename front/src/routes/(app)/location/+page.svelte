@@ -20,7 +20,8 @@
     </div>
     
 
-    <div class="mt-5">
-        <span>- Address : 서울특별시 강남구 강남대로116길 10, 5층</span>
+    <div class="mt-5 leading-7">
+        <span class="block">- Address : 서울특별시 강남구 강남대로116길 10, 5층</span>
+        <span class="block">- CallNumber : 010-2222-3333</span>
     </div>
 </div>
